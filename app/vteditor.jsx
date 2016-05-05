@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Reflux from 'reflux';
 import d3 from 'd3';
@@ -345,21 +344,7 @@ var VTEditor = React.createClass({
 						interpolateParameter={this.interpolateParameter}
 						selection={this.state.selection}
 						selectable={iconVisSelectable} />
-					{Object.keys(example_icon.parameters).map( (p) => (
-							<KeyframeEditor 
-								name="example" 
-								scaleX={scaleXExample} 
-								currentTime={this.state.playback.currentTime} 
-								parameter={p} 
-								vticon={example_icon} 
-								keyframeCircleRadius={this.props.keyframeCircleRadius} 
-								playheadFill={this.props.playheadFill} 
-								selection={this.state.selection}
-								selectable={keyframeSelectable}
-								visualization={visualization}
-								visualizeTicks={visualizeTicks}
-								modifiable={modifiable} />
-						))}
+					
 				</div>);
 				exampleGallery =  <Gallery />;
 			}

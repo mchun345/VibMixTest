@@ -83,7 +83,7 @@ var vticonStore = Reflux.createStore({
 						},
 
 						parameters: {
-							amplitude: {
+							amplitude: { //
 								valueScale:[0,1], 
 								data : [
 									{ id: 6, t: 600, value:0.5, selected:false},  
@@ -133,7 +133,7 @@ var vticonStore = Reflux.createStore({
 	_selectVTIcon(name="") {
 		var rv = "";
 		if (name in this._data) {
-			rv = name;
+			rv = name; //was name, seems to help select the pattern in timeline
 			for (var n in this._data) {
 				this._data[n].selected = (name === n);
 			}

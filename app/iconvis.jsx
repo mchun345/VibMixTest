@@ -27,7 +27,7 @@ var IconVis = React.createClass({
 	
 	getDefaultProps: function() {
 	    return {
-	      height: 50,
+	      height: 250, /*was 50*/
 	      width:'100%',
 	      visColor:'#FFDDAD',
 	      background:"#FAFAFA",

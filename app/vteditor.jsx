@@ -20,10 +20,6 @@ var ClipboardStore = require('./stores/clipboardstore.js');
 var AnimationStore = require('./stores/animationstore.js');
 var StudyStore = require('./stores/studystore.js')
 
-
-
-
-
 var VTEditor = React.createClass({
 	mixins : [
 				Reflux.connect(PlaybackStore.store, 'playback'), //emitted updates go to 'playback' key
@@ -274,17 +270,17 @@ var VTEditor = React.createClass({
 		var example_icon = this.state.vticons["example"];
 
 
-		var designStyle = {
-			width:"100%", /*was 44%*/
-			marginLeft:'auto',
+		var designStyle = { /*for the "right hand side"*/
+			width:"85%", /*was 44%*/
+			marginLeft:'20px', /*was auto*/
 			marginRight:'auto',
-			display:"inline", /*was block*/
+			display:"block", /*was block*/
 			borderStyle:"solid",
 			borderWidth:0
 		};
-		var exampleStyle = {
-			width:"88%", /*was 44%*/
-			marginLeft:'auto', /*was auto*/
+		var exampleStyle = { /*for the left hand, iconvis side*/
+			width:"75%", /*was 44%*/
+			marginLeft:'50px', /*was auto*/
 			marginRight:'auto',
 			display:"block", /*was block*/
 			borderStyle:"solid",
@@ -413,7 +409,7 @@ var VTEditor = React.createClass({
 
 	_calculateTimelineRange(name) {
 	    var actualWidth = this.refs[name+"EditorRef"].getDOMNode().clientWidth;
-    	// var actualHeight = this.refs[name+"EditorRef"].getDOMNode().clientHeight;
+    	//var actualHeight = this.refs[name+"EditorRef"].getDOMNode().clientHeight;
 		
 		return [this.props.timelineLeftOffset+this.props.keyframeCircleRadius, actualWidth-this.props.keyframeCircleRadius-this.props.timelineRightOffset];
 

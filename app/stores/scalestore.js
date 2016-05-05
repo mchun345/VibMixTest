@@ -21,7 +21,7 @@ var scaleStore = Reflux.createStore({
 
 	init() {
 		var stub_fn = d3.scale.identity();
-		this._names = ["main", "example"];
+		this._names = ["main", "example"]; //was this._names = ["main", "example"];
 
 		this._parameterValues = {};
 		this._duration = {};

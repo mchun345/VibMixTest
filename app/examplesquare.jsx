@@ -55,7 +55,8 @@ var ExampleSquare = React.createClass({
 	},
 
 	_handleClick : function(e) {
-		ExampleStore.actions.selectExample(this.props.exampleName);
+		ExampleStore.actions.selectExample(this.props.exampleName); //orig
+		//ExampleStore.actions.selectExample('v10_09_1_8'); //this always loads when clicking on any other example
 	},
 
 	render() {

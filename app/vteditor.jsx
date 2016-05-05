@@ -276,18 +276,18 @@ var VTEditor = React.createClass({
 
 
 		var designStyle = {
-			width:"44%",
+			width:"100%", /*was 44%*/
 			marginLeft:'auto',
 			marginRight:'auto',
-			display:"block",
+			display:"inline", /*was block*/
 			borderStyle:"solid",
 			borderWidth:0
 		};
 		var exampleStyle = {
-			width:"44%",
-			marginLeft:'auto',
+			width:"88%", /*was 44%*/
+			marginLeft:'auto', /*was auto*/
 			marginRight:'auto',
-			display:"block",
+			display:"block", /*was block*/
 			borderStyle:"solid",
 			borderWidth:0
 		};
@@ -298,7 +298,7 @@ var VTEditor = React.createClass({
 
 		if(design_icon.selected) {
 			designStyle.borderColor="black";
-			exampleStyle.borderColor="white";
+			exampleStyle.borderColor="white"; 
 			if (this.state.playback.currentTime < this.state.vticons.main.duration)
 			{
 				amplitude_for_soundgen = amplitude;
@@ -373,40 +373,12 @@ var VTEditor = React.createClass({
 						animation={this.state.animation.animation}
 						animationParameters={this.state.animation.animationParameters} />
 				<div name="main" id="maineditor" ref="mainEditorRef" style={designStyle}>
-					<ControlBar
-						name="main"
-						playing={this.state.playback.playing}
-						mute={this.state.playback.mute}/>
-					<PlayHead name="main"
-						displayPlayhead={this.state.vticons["main"].selected}
-						scaleX={scaleXMain} 
-						currentTime={this.state.playback.currentTime} 
-						duration={design_icon.duration} 
-						keyframeCircleRadius={this.props.keyframeCircleRadius} 
-						playheadFill={this.props.playheadFill}/>
-					<IconVis name="main"
-						scaleX={scaleXMain} 
-						vticon={design_icon} 
-						currentTime={this.state.playback.currentTime} 
-						keyframeCircleRadius={this.props.keyframeCircleRadius} 
-						playheadFill={this.props.playheadFill} 
-						interpolateParameters={this.interpolateParameters} 
-						interpolateParameter={this.interpolateParameter}
-						selection={this.state.selection}/>
-					{Object.keys(design_icon.parameters).map( (p) => (
-							<KeyframeEditor 
-								name="main" 
-								scaleX={scaleXMain} 
-								currentTime={this.state.playback.currentTime} 
-								parameter={p} 
-								vticon={design_icon} 
-								keyframeCircleRadius={this.props.keyframeCircleRadius} 
-								playheadFill={this.props.playheadFill} 
-								selection={this.state.selection}/>
-						))}
-				</div>
+					
 				{exampleEditor}
 				{exampleGallery}
+					
+				</div>
+				
 				
 			</div>);
 		},

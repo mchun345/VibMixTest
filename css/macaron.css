@@ -102,10 +102,11 @@ a:active {
     border-width:3px;
 }
 
-.example-galley {
-    width:10%;
+.example-gallery {
+    width:10%; /*was 10%*/
     height:100%;
-    float:left;
+    padding-left: 15px;
+    float:right; /*was float:left*/
 }
 
 .animationoptions {

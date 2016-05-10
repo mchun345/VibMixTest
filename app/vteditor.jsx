@@ -11,6 +11,8 @@ var AnimationWindow = require('./animationwindow.jsx');
 var KeyframeEditor = require('./keyframeeditor.jsx');
 var Gallery = require('./gallery.jsx');
 
+var Slider = require('./slider.jsx');
+
 var PlaybackStore = require('./stores/playbackstore.js');
 var VTIconStore = require('./stores/vticonstore.js');
 var DragStore = require('./stores/dragstore.js');
@@ -340,6 +342,11 @@ var VTEditor = React.createClass({
 						interpolateParameter={this.interpolateParameter}
 						selection={this.state.selection}
 						selectable={iconVisSelectable} />
+					<Slider 
+						name="example"
+						playing={this.state.playback.playing}
+						mute={this.state.playback.mute}/>
+					
 					
 				</div>);
 				exampleGallery =  <Gallery />;

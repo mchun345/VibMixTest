@@ -16,7 +16,7 @@ var ControlBar = React.createClass({
 
 	getDefaultProps: function() { 
 	    return {
-	     
+	     width:'50%',
 
 	    }
 	},
@@ -52,42 +52,33 @@ var ControlBar = React.createClass({
 
 	render : function() {
 
-		var divStyle = {
-			height:this.props.height,
-			width:this.props.width,
-			background:this.props.background,
-			fontSize:this.props.fontSize,
-			className:'unselectable'
+		var containerStyle  = {
+			marginLeft:'15%',
+			marginTop:'10%'
 		};
 
-		var timeControlStyle  = {
-			marginLeft:'auto',
-			marginRight:'auto',
-			textAlign:'center'
+		var leftSliderEndStyle = {
+			marginLeft:'15%'
 		};
 
-		var buttonStyle = {
-			marginLeft:'0.5em',
-			marginRight:'0.5em',
-			className:'unselectable'
+		var lengthStyle = {
+            width:'500px' //should be calculated as current screen width in some way...
 		};
 
-		var iconText = "fa fa-play";
-		if (this.props.playing) {
-			iconText = "fa fa-pause";
+		var sliderTitle = {
+			fontWeight:'bold',
+			marginLeft:'35%'
 		}
 
+
 		return (
-			<div className="controlbar">
-				<div className="time-control" >
-					 <a class="btn" href="#"><i onClick={this._onSkipBackwardClick} className="fa fa-step-backward" style={buttonStyle}></i></a>
-					 <a class="btn" href="#"><i onClick={this._onPlayClick} className={iconText} style={buttonStyle}></i></a>
-					 <a class="btn" href="#"><i onClick={this._onSkipForwardClick} className="fa fa-step-forward" style={buttonStyle}></i></a>
-					 <a class="btn" href="#"><span onClick={this._onMuteClick} className="unselectable mute"><input type="checkbox" checked={this.props.mute}/>Mute</span></a>
+			<div className="slider-container" style={containerStyle}>
+			<p style={sliderTitle}>Current Parameter</p>
+			<label className='h5 bold block'>Simple </label>
 					<input type='range' value={this.props.range}
                     min='0' max='100' step='1'
-                    className='test' />
-				</div>	
+                    className='slider-bar' style={lengthStyle}/>
+            <label className='h5 bold block'> Complex</label>
 			</div>
 			);
 	}
